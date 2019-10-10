@@ -6,7 +6,7 @@ from os import makedirs
 
 
 subject_list = [1, 5, 6, 7, 8, 9, 11]
-action_list = [x for x in range(2, 16)]
+action_list = [x for x in range(2, 17)]
 subaction_list = [x for x in range(1, 3)]
 camera_list = [x for x in range(1, 5)]
 
