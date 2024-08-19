@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-from subprocess import call
 from os import path, makedirs
 import hashlib
 from tqdm import tqdm
 import configparser
 import requests
+import urllib.request
 
 
 BASE_URL = 'http://vision.imar.ro/human3.6m/filebrowser.php'
@@ -30,12 +30,10 @@ def md5(filename):
 
 
 def download_file(url, dest_file, phpsessid):
-    call(['axel',
-          '-a',
-          '-n', '24',
-          '-H', 'COOKIE: PHPSESSID=' + phpsessid,
-          '-o', dest_file,
-          url])
+    opener = urllib.request.build_opener()
+    opener.addheaders.append(('Cookie', 'PHPSESSID=' + phpsessid))
+    urllib.request.install_opener(opener)
+    urllib.request.urlretrieve(url, dest_file)
 
 
 def get_phpsessid():

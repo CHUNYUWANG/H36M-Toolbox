@@ -15,8 +15,23 @@ the maintainers of the dataset.**
 ## Requirements
 
 * Python 3
-* [`axel`](https://github.com/axel-download-accelerator/axel)
 * CDF (https://www.scivision.dev/spacepy-install-anaconda-python/)
+
+## Installation
+
+1. Clone this repository.
+2. Create a virtual environment and install the dependencies:
+
+```bash
+# using pip
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# using Conda
+conda create --name h36m-toolbox --file requirements.txt
+conda activate h36m-toolbox
+```
 
 ## Usage
 
